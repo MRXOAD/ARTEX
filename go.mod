@@ -60,3 +60,6 @@ require (
 	modernc.org/mathutil v1.7.1 // indirect
 	modernc.org/memory v1.11.0 // indirect
 )
+
+// 本地补丁：为自托管 SearXNG 增加 web_search 后端（见 third_party/norma/tool/websearch.go）。
+replace github.com/Autumn-27/norma => ./third_party/norma

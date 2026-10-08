@@ -480,11 +480,22 @@ export default function SystemSettingsPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="ddgs">DuckDuckGo（ddgs · 免费无 Key）</SelectItem>
+                    <SelectItem value="searxng">本地 SearXNG（自建）</SelectItem>
                     <SelectItem value="brave-free">Brave（免费版 · 需 Key）</SelectItem>
                     <SelectItem value="tavily">Tavily（需 Key）</SelectItem>
                     <SelectItem value="deepseek">DeepSeek（官方）</SelectItem>
                   </SelectContent>
                 </Select>
+              </div>
+            )}
+
+            {webSearch && backend === "searxng" && (
+              <div className="border-border/60 bg-muted/30 flex flex-col gap-2 rounded-md border p-3">
+                <p className="text-sm font-medium">本地 SearXNG（自建元搜索）</p>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  搜索请求发往本部署配置的 SearXNG 实例（由环境变量 <code>ARTEX_SEARX_URL</code> 指定），
+                  在内网完成——无 Key、无外部依赖。
+                </p>
               </div>
             )}
 
